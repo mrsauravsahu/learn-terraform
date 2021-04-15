@@ -18,3 +18,11 @@ resource "azurerm_postgresql_server" "db" {
   ssl_enforcement_enabled          = true
   ssl_minimal_tls_version_enforced = "TLS1_2"
 }
+
+resource "azurerm_postgresql_firewall_rule" "example" {
+  name                = "admin"
+  resource_group_name = azurerm_resource_group.rg.name
+  server_name         = azurerm_postgresql_server.db.name
+  start_ip_address    = var.db_admin_allowed_ip
+  end_ip_address      = var.db_admin_allowed_ip
+}

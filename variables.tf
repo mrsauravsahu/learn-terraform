@@ -9,3 +9,9 @@ variable "db_admin_password" {
   description = "(Required) The admin password for the database"
   sensitive = true
 }
+
+variable "db_admin_allowed_ip" {
+  type = string
+  description = "(Required) The allowed IP for admin access"
+  sensitive = true
+}
