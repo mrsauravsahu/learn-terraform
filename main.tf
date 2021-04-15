@@ -13,5 +13,8 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name = "saurav-tf-rg"
-  location = "westus2"
+  location = "centralus"
+  tags = {
+    "CreatedBy" = "Terraform"
+  }
 }
